@@ -6,6 +6,11 @@
       </app-card>
       <app-card [config]="config.exclusionRules">
         <app-page-rule-form class="app-card-content card"></app-page-rule-form>
+        <div class="app-card-actions">
+          <button appStrokedButton (clicked)="addRule('exclusionRule')">
+            {{ '+ new rule' | uppercase }}
+          </button>
+        </div>
       </app-card>
     </div>
   </app-card>

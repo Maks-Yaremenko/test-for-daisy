@@ -21,4 +21,8 @@ export class AppComponent {
       subtitle: 'Where would you like to display your campaign?',
     },
   };
+
+  public addRule(type: 'exclusionRule' | 'inclusionRule') {
+    console.log('hello => ', type);
+  }
 }
