@@ -7,10 +7,18 @@ import { IAppCard } from '@shared/components/card/card.component';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  public pageCardConfig: IAppCard = {
-    title: 'Inclustion Rules',
-    subtitle: 'Where would you like to display your campaign?',
-    headerUnderline: true,
-    actionsUnderline: true,
+  public config: { [key: string]: IAppCard } = {
+    wrapper: {
+      title: 'Display Rules',
+      headerUnderline: true,
+    },
+    exclusionRules: {
+      title: 'Exclusion Rules',
+      subtitle: 'Where would you like to display your campaign?',
+    },
+    inclusionRules: {
+      title: 'Inclustion Rules',
+      subtitle: 'Where would you like to display your campaign?',
+    },
   };
 }

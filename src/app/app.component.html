@@ -1,6 +1,12 @@
 <div class="content">
-  <app-card [config]="pageCardConfig">
-    <app-page-rule-form class="content"></app-page-rule-form>
-    <div class="actions">hello world</div>
+  <app-card [config]="config.wrapper">
+    <div class="app-card-content content_rule-cards">
+      <app-card [config]="config.inclusionRules">
+        <app-page-rule-form class="app-card-content card"></app-page-rule-form>
+      </app-card>
+      <app-card [config]="config.exclusionRules">
+        <app-page-rule-form class="app-card-content card"></app-page-rule-form>
+      </app-card>
+    </div>
   </app-card>
 </div>

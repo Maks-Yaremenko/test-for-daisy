@@ -8,12 +8,12 @@
     <h5>{{ subtitle }}</h5>
   </div>
   <div class="card_content">
-    <ng-content select=".content"></ng-content>
+    <ng-content select=".app-card-content"></ng-content>
   </div>
   <div
     class="card_actions"
     [ngClass]="{ card_actions__underline: actionsUnderline }"
   >
-    <ng-content select=".actions"></ng-content>
+    <ng-content select=".app-card-actions"></ng-content>
   </div>
 </div>

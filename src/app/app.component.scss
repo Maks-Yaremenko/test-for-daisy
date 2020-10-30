@@ -5,4 +5,12 @@
   max-width: 960px;
   flex-direction: column;
   align-items: center;
+
+  &_rule-cards app-card {
+    box-shadow: 4px 4px 2px 0px rgba(0, 0, 0, 0.02);
+
+    &:first-child {
+      margin-bottom: 16px;
+    }
+  }
 }

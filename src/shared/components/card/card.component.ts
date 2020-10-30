@@ -1,9 +1,4 @@
-import {
-  Component,
-  OnInit,
-  ChangeDetectionStrategy,
-  Input,
-} from '@angular/core';
+import { Component, ChangeDetectionStrategy, Input } from '@angular/core';
 
 export interface IAppCard {
   title?: string;
@@ -18,7 +13,7 @@ export interface IAppCard {
   styleUrls: ['./card.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class CardComponent implements OnInit, IAppCard {
+export class CardComponent implements IAppCard {
   @Input() title: string;
   @Input() subtitle: string;
   @Input() headerUnderline: boolean;
@@ -27,8 +22,4 @@ export class CardComponent implements OnInit, IAppCard {
   @Input() set config(config: IAppCard) {
     Object.entries(config).forEach((i) => (this[i[0]] = i[1]));
   }
-
-  constructor() {}
-
-  ngOnInit() {}
 }
