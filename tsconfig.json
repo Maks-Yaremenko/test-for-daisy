@@ -14,7 +14,8 @@
     "typeRoots": ["node_modules/@types"],
     "lib": ["es2018", "dom"],
     "paths": {
-      "@constants/*": ["./src/app/constants/*"]
+      "@constants/*": ["./src/app/constants/*"],
+      "@shared/*": ["./src/shared/*"]
     }
   },
   "angularCompilerOptions": {

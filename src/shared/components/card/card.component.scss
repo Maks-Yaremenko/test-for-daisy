@@ -1,0 +1,43 @@
+:host {
+  width: 100%;
+}
+
+.card {
+  border-radius: 4px;
+  background: #fff;
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.08), 0 0 6px rgba(0, 0, 0, 0.05);
+  transition: 0.3s transform cubic-bezier(0.155, 1.105, 0.295, 1.12),
+    0.3s box-shadow,
+    0.3s -webkit-transform cubic-bezier(0.155, 1.105, 0.295, 1.12);
+
+  &_header {
+    padding: 18px;
+    h3,
+    h5 {
+      margin: 0;
+    }
+    h3 {
+      line-height: 32px;
+      font-weight: 500;
+    }
+    h5 {
+      font-weight: 300;
+      color: gray;
+    }
+
+    &__underline {
+      border-bottom: 1px solid lightgray;
+    }
+  }
+
+  &_content,
+  &_actions {
+    padding: 18px;
+  }
+
+  &_actions {
+    &__underline {
+      border-top: 1px solid lightgray;
+    }
+  }
+}
