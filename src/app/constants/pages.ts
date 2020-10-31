@@ -1,11 +1,9 @@
-interface Page {
+export interface Page {
   title: string;
 }
 
-const PAGES: Page[] = [
+export const PAGES: Page[] = [
   { title: 'Home' },
   { title: 'Product' },
   { title: 'Password' },
 ];
-
-export { PAGES, Page };

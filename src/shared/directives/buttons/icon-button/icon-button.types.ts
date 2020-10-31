@@ -4,15 +4,14 @@ import {
   ButtonTypes,
 } from '@shared/directives/buttons/button.types';
 
-export const StrockedButtonStyleConfig: ButtonStyleConfig = {
+export const IconButtonStyleConfig: ButtonStyleConfig = {
   [ButtonTypes.basic]: {
     main: {
       backgroundColor: Colors.$grey50,
-      borderRadius: '4px',
+      borderRadius: '50%',
       display: 'inline-block',
       cursor: 'pointer',
       fontSize: '14px',
-      padding: '12px 20px',
       textDecoration: 'none',
       outline: 'none',
       border: `1px solid ${Colors.$grey500}`,
