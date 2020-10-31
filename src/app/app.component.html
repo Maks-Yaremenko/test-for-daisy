@@ -10,9 +10,11 @@
           <button appStrokedButton (clicked)="addRule('exclusionRule')">
             {{ '+ new rule' | uppercase }}
           </button>
-          <button appIconButton (clicked)="addRule('exclusionRule')">
-            <div class="icon-close"></div>
-          </button>
+          <button
+            class="icon-cancel"
+            appIconButton
+            (clicked)="addRule('exclusionRule')"
+          ></button>
         </div>
       </app-card>
     </div>

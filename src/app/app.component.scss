@@ -17,22 +17,17 @@
   }
 }
 
-.icon-close {
-  width: 8px;
-  height: 16px;
-  display: flex;
-  justify-content: center;
-  &:before,
+.icon-cancel {
+  padding: 0;
+
   &:after {
     content: ' ';
-    height: 100%;
-    width: 1px;
-    background-color: $grey-700;
-  }
-  &:before {
-    transform: rotate(45deg) scale(0.7);
-  }
-  &:after {
-    transform: rotate(-45deg) scale(0.7);
+    display: block;
+    width: 16px;
+    height: 15px;
+    background: url('src/assets/icons/cancel.svg');
+    background-size: 16px 16px;
+    background-repeat: no-repeat;
+    transform: scale(0.5);
   }
 }
