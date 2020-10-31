@@ -9,7 +9,6 @@ import { IAppCard } from '@shared/components/card/card.component';
 export class AppComponent {
   public config: { [key: string]: IAppCard } = {
     wrapper: {
-      title: 'Display Rules',
       headerUnderline: true,
     },
     exclusionRules: {

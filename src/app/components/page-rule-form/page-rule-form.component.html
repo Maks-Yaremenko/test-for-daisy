@@ -1,1 +1,66 @@
-<p>page-rule-form works!</p>
+<div class="page-rule-form flex flex-column">
+  <form [formGroup]="form">
+    <div formArrayName="rules">
+      <div *ngFor="let rule of rules.controls; let i = index">
+        <ng-container [formGroup]="rule">
+          <div class="page-rule-form_row">
+            <app-input-select
+              formControlName="page"
+              class="page-rule-form_page"
+            >
+              <option *ngFor="let page of pages">
+                {{ page }}
+              </option>
+            </app-input-select>
+
+            <ng-container
+              *ngIf="rules.controls[i]['controls'].page.value === 'Custom'"
+            >
+              <app-input-select
+                formControlName="condition"
+                class="page-rule-form_condition"
+              >
+                <option *ngFor="let condition of conditions">
+                  {{ condition }}
+                </option>
+              </app-input-select>
+
+              <div class="page-rule-form_url">
+                <app-input-text
+                  #url
+                  formControlName="url"
+                  placeholder="Type a full or partial URL"
+                >
+                </app-input-text>
+                <span
+                  class="field-error"
+                  *ngIf="
+                    rules.controls[i]['controls'].url.touched &&
+                    rules.controls[i]['controls'].url.invalid &&
+                    !url.focused
+                  "
+                  >URL is Missing</span
+                >
+              </div>
+
+              <button
+                class="page-rule-form_action-delete icon-cancel"
+                appIconButton
+                (clicked)="removeRule(i)"
+              ></button>
+            </ng-container>
+          </div>
+        </ng-container>
+      </div>
+    </div>
+
+    <button
+      type="button"
+      class="page-rule-form_action-add-rule"
+      appStrokedButton
+      (clicked)="addRule()"
+    >
+      {{ '+ new rule' | uppercase }}
+    </button>
+  </form>
+</div>

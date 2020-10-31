@@ -33,10 +33,8 @@ export class AbstractButton {
     this.setBackground(this.style.hover.backgroundColor);
   }
 
-  @HostListener('mouseout', ['$event'])
-  mouseout(event) {
-    console.log('event => ', event.currentTarget, event.target, event);
-
+  @HostListener('mouseout')
+  mouseout() {
     this.setBackground(this.style.main.backgroundColor);
   }
 

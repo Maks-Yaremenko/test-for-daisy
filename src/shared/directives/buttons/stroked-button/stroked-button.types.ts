@@ -9,10 +9,9 @@ export const StrockedButtonStyleConfig: ButtonStyleConfig = {
     main: {
       backgroundColor: Colors.$grey50,
       borderRadius: '4px',
-      display: 'inline-block',
       cursor: 'pointer',
       fontSize: '14px',
-      padding: '12px 20px',
+      padding: '10px 16px',
       textDecoration: 'none',
       outline: 'none',
       border: `1px solid ${Colors.$grey500}`,

@@ -9,12 +9,12 @@ export interface ButtonStyle {
     backgroundColor: string;
     border: string;
     borderRadius?: string;
-    display?: string;
     cursor?: string;
     fontSize?: string;
     padding?: string;
     textDecoration?: string;
     outline?: string;
+    height?: string;
   };
   hover: {
     backgroundColor: string;

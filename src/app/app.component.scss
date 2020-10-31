@@ -15,19 +15,12 @@
       margin-bottom: 16px;
     }
   }
-}
 
-.icon-cancel {
-  padding: 0;
+  .app-card-title {
+    font-size: 14px;
+  }
 
-  &:after {
-    content: ' ';
-    display: block;
-    width: 16px;
-    height: 15px;
-    background: url('src/assets/icons/cancel.svg');
-    background-size: 16px 16px;
-    background-repeat: no-repeat;
-    transform: scale(0.5);
+  .app-card-content ::ng-deep .card_content {
+    padding-top: 0;
   }
 }

@@ -9,13 +9,11 @@ export const IconButtonStyleConfig: ButtonStyleConfig = {
     main: {
       backgroundColor: Colors.$grey50,
       borderRadius: '50%',
-      display: 'inline-block',
       cursor: 'pointer',
-      fontSize: '14px',
-      textDecoration: 'none',
       outline: 'none',
       border: `1px solid ${Colors.$grey500}`,
       color: Colors.$grey900,
+      height: 'max-content',
     },
     hover: {
       backgroundColor: Colors.$grey200,

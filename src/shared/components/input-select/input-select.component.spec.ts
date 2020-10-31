@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { PageRuleFieldComponent } from './page-rule-field.component';
+import { InputSelectComponent } from './input-select.component';
 
-describe('PageRuleFieldComponent', () => {
-  let component: PageRuleFieldComponent;
-  let fixture: ComponentFixture<PageRuleFieldComponent>;
+describe('InputSelectComponent', () => {
+  let component: InputSelectComponent;
+  let fixture: ComponentFixture<InputSelectComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ PageRuleFieldComponent ]
+      declarations: [ InputSelectComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(PageRuleFieldComponent);
+    fixture = TestBed.createComponent(InputSelectComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

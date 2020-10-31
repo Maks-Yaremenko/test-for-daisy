@@ -1,11 +1,13 @@
 <div class="card">
   <div
-    *ngIf="title"
     class="card_header"
     [ngClass]="{ card_header__underline: headerUnderline }"
   >
-    <h3>{{ title }}</h3>
-    <h5>{{ subtitle }}</h5>
+    <ng-container *ngIf="title">
+      <h3>{{ title }}</h3>
+      <h5>{{ subtitle }}</h5>
+    </ng-container>
+    <ng-content select=".app-card-title"></ng-content>
   </div>
   <div class="card_content">
     <ng-content select=".app-card-content"></ng-content>

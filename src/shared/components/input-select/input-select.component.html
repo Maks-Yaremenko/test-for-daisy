@@ -1,0 +1,7 @@
+<select
+  [(ngModel)]="value"
+  [disabled]="disabled"
+  (ngModelChange)="updateValue($event)"
+>
+  <ng-content></ng-content>
+</select>

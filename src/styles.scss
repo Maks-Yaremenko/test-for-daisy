@@ -1,7 +1,50 @@
 /* You can add global styles to this file, and also import other style files */
+@import 'src/app/constants/colors';
+
 html,
 body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
     'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji',
     'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+}
+
+.flex {
+  display: flex;
+  &.flex-column {
+    flex-direction: column;
+  }
+  &.flex-row {
+    flex-direction: row;
+  }
+}
+
+input[type='text' i],
+select {
+  padding: 6px 12px;
+}
+
+.icon-cancel {
+  padding: 0;
+
+  &:after {
+    content: ' ';
+    display: block;
+    width: 16px;
+    height: 15px;
+    background: url('src/assets/icons/cancel.svg') no-repeat;
+    background-size: 16px 16px;
+    transform: scale(0.5);
+  }
+}
+
+.field-error {
+  background: $red-100;
+  height: 36px;
+  border-radius: 4px;
+  font-size: 14px;
+  border: 1px solid $red-200;
+  display: flex;
+  align-items: center;
+  padding-left: 16px;
+  color: $red-700;
 }
