@@ -1,0 +1,39 @@
+@import 'colors';
+
+.app-icon-button {
+  border-radius: 50%;
+}
+
+.app-stroked-button {
+  border-radius: 4px;
+  padding: 10px 16px;
+}
+
+.app-icon-button,
+.app-stroked-button {
+  background-color: $grey-50;
+  cursor: pointer;
+  outline: none;
+  border: 1px solid $grey-500;
+  color: $grey-900;
+  height: max-content;
+  &:hover {
+    background-color: $grey-200;
+  }
+  &:active {
+    background-color: $grey-300;
+  }
+
+  &_warn {
+    color: $grey-50;
+    border: 1px solid $grey-500;
+
+    &:hover {
+      border: 1px solid $red-300;
+      background-color: $white;
+    }
+    &:active {
+      background-color: $red-50;
+    }
+  }
+}

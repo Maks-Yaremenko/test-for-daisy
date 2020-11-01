@@ -37,5 +37,14 @@
   &_action-delete {
     margin-top: 6px;
     margin-left: 12px;
+
+    &.app-round-icon {
+      &:after {
+        background: url('src/assets/icons/cancel.svg') no-repeat;
+      }
+      &:hover:after {
+        background: url('src/assets/icons/cancel-red.svg') no-repeat;
+      }
+    }
   }
 }

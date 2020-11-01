@@ -1,0 +1,11 @@
+.app-round-icon {
+  padding: 0;
+
+  &:after {
+    content: ' ';
+    display: block;
+    width: 16px;
+    height: 15px;
+    transform: scale(0.5);
+  }
+}
