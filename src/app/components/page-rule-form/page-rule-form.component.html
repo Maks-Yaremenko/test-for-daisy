@@ -1,7 +1,8 @@
 <div class="page-rule-form flex flex-column">
   <form [formGroup]="form">
     <div formArrayName="rules">
-      <div *ngFor="let rule of rules.controls; let i = index">
+      <ng-container *ngFor="let rule of rules.controls; let i = index">
+        <span *ngIf="i >= 1" class="page-rule-form_separator">OR</span>
         <ng-container [formGroup]="rule">
           <div class="page-rule-form_row">
             <app-input-select
@@ -42,16 +43,16 @@
                   >URL is Missing</span
                 >
               </div>
-
-              <button
-                class="page-rule-form_action-delete icon-cancel"
-                appIconButton
-                (clicked)="removeRule(i)"
-              ></button>
             </ng-container>
+
+            <button
+              class="page-rule-form_action-delete icon-cancel"
+              appIconButton
+              (clicked)="removeRule(i)"
+            ></button>
           </div>
         </ng-container>
-      </div>
+      </ng-container>
     </div>
 
     <button

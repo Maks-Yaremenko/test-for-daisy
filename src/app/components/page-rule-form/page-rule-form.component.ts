@@ -1,11 +1,5 @@
-import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
-import {
-  FormArray,
-  FormBuilder,
-  FormControl,
-  FormGroup,
-  Validators,
-} from '@angular/forms';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
+import { FormArray, FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-page-rule-form',
@@ -13,26 +7,23 @@ import {
   styleUrls: ['./page-rule-form.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class PageRuleFormComponent implements OnInit {
+export class PageRuleFormComponent {
   public conditions = ['Contains', 'Exact match'];
   public pages: string[] = [
     'All Pages',
     'Home Page',
-    'Produc Page',
+    'Product Page',
     'Password Page',
     'Custom',
   ];
+  public form: FormGroup;
 
-  private form: FormGroup;
-
-  constructor(private fb: FormBuilder) {}
-
-  ngOnInit() {
+  constructor(private fb: FormBuilder) {
     this.form = this.fb.group({
       rules: this.fb.array([
         this.fb.group({
           page: this.fb.control(this.pages[0]),
-          condition: new FormControl(this.conditions[0]),
+          condition: this.fb.control(this.conditions[0]),
           url: this.fb.control('', Validators.required),
         }),
       ]),
@@ -46,7 +37,10 @@ export class PageRuleFormComponent implements OnInit {
   public addRule(): void {
     this.rules.push(
       this.fb.group({
-        page: this.fb.control(this.pages[0]),
+        page: this.fb.control(
+          this.getLastSelectedPageCustomOrNull(this.rules.value) ||
+            this.pages[0]
+        ),
         condition: this.fb.control(this.conditions[0]),
         url: this.fb.control('', Validators.required),
       })
@@ -55,5 +49,14 @@ export class PageRuleFormComponent implements OnInit {
 
   public removeRule(index: number): void {
     this.rules.removeAt(index);
+  }
+
+  private getLastSelectedPage(rules: any[]): string | null {
+    return rules.length ? rules.pop().page : null;
+  }
+
+  private getLastSelectedPageCustomOrNull(rules: any[]): string | null {
+    const page = this.getLastSelectedPage(rules);
+    return page === 'Custom' ? page : null;
   }
 }

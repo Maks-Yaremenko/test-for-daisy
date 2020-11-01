@@ -3,13 +3,21 @@
     <div class="app-card-title">
       <span>Display Rules</span>
     </div>
-    <div class="app-card-content content_rule-cards">
+    <div class="app-card-content">
       <app-card [config]="config.inclusionRules">
-        <app-page-rule-form class="app-card-content"></app-page-rule-form>
+        <app-page-rule-form
+          #inclusionRules
+          class="app-card-content"
+        ></app-page-rule-form>
       </app-card>
       <app-card [config]="config.exclusionRules">
-        <app-page-rule-form class="app-card-content"></app-page-rule-form>
+        <app-page-rule-form
+          #exclusionRules
+          class="app-card-content"
+        ></app-page-rule-form>
       </app-card>
     </div>
   </app-card>
 </div>
+
+{{ result | async | json }}

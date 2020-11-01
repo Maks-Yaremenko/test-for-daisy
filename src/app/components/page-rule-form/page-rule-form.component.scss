@@ -1,27 +1,41 @@
-.page-rule-form {
-  &_action-add-rule {
-    width: 140px;
-  }
-  &_action-delete {
-    margin-top: 6px;
-  }
+@import 'src/app/constants/colors';
 
+.page-rule-form {
   &_row {
     display: flex;
-    margin-bottom: 20px;
+  }
+
+  &_separator {
+    display: inline-block;
+    margin: 8px 32px;
+    font-size: 14px;
+    color: $grey-400;
   }
 
   &_page,
   &_condition {
+    &:not(:first-child) {
+      margin-left: 20px;
+    }
     & ::ng-deep select {
       width: 200px;
-      margin-right: 20px;
     }
   }
+
   &_url {
-    margin-right: 16px;
+    margin-left: 20px;
     ::ng-deep input {
       width: 300px;
     }
+  }
+
+  &_action-add-rule {
+    width: 140px;
+    margin-top: 20px;
+  }
+
+  &_action-delete {
+    margin-top: 6px;
+    margin-left: 12px;
   }
 }
