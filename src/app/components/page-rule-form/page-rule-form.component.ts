@@ -1,6 +1,6 @@
 import { Component, ChangeDetectionStrategy, OnInit } from '@angular/core';
 import { FormArray, FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { slideInOut } from '@shared/animations/slideInOut';
+import { slideInOut } from '@shared/animations/slide-in-out';
 
 @Component({
   animations: [slideInOut],
