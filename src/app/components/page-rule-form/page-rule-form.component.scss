@@ -51,15 +51,62 @@
   }
 
   &_action-delete {
-    margin-top: 6px;
-    margin-left: 12px;
+    &_desktop {
+      margin-top: 6px;
+      margin-left: 12px;
 
-    &.app-round-icon {
-      &:after {
-        background: url('src/assets/icons/cancel.svg') no-repeat;
+      &.app-round-icon {
+        &:after {
+          background: url('src/assets/icons/cancel.svg') no-repeat;
+        }
+        &:hover:after {
+          background: url('src/assets/icons/cancel-red.svg') no-repeat;
+        }
       }
-      &:hover:after {
-        background: url('src/assets/icons/cancel-red.svg') no-repeat;
+    }
+    &_mobile {
+      display: none;
+    }
+  }
+}
+
+// small fix for mobile just for fun
+@media (max-width: 1024px) and (-webkit-min-device-pixel-ratio: 2),
+  (max-width: 1024px) and (min-resolution: 192dpi) {
+  .page-rule-form {
+    &_row {
+      flex-direction: column;
+    }
+
+    &_page,
+    &_condition {
+      margin-bottom: 12px;
+      &:not(:first-child) {
+        margin-left: auto;
+        width: 100%;
+      }
+      &::ng-deep select {
+        width: 100%;
+      }
+    }
+
+    &_url {
+      margin: 0 0 12px 0;
+      ::ng-deep input {
+        width: stretch;
+      }
+    }
+
+    &_action-add-rule {
+      width: 100%;
+    }
+
+    &_action-delete {
+      &_desktop {
+        display: none;
+      }
+      &_mobile {
+        display: block;
       }
     }
   }

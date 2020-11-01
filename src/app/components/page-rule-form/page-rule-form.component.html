@@ -46,10 +46,18 @@
 
           <button
             color="warn"
-            class="page-rule-form_action-delete app-round-icon"
+            class="page-rule-form_action-delete_desktop app-round-icon"
             appIconButton
             (click)="removeRule(i)"
           ></button>
+          <button
+            type="warn"
+            class="page-rule-form_action-delete_mobile"
+            appStrokedButton
+            (click)="removeRule(i)"
+          >
+            {{ 'delete rule' | uppercase }}
+          </button>
         </div>
       </div>
     </div>
