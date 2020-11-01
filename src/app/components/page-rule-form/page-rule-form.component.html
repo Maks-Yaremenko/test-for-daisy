@@ -1,13 +1,11 @@
 <div class="page-rule-form flex flex-column">
   <form [formGroup]="form">
-    <div formArrayName="rules" class="page-rule-form_rules">
+    <div formArrayName="rules">
       <div
         [@slideInOut]="'in'"
+        class="page-rule-form_row-wrapper"
         *ngFor="let rule of rules.controls; let i = index"
       >
-        <!--
-        <span *ngIf="i >= 1" class="page-rule-form_separator">OR</span>
--->
         <div class="page-rule-form_row" [formGroup]="rule">
           <app-input-select formControlName="page" class="page-rule-form_page">
             <option *ngFor="let page of pages">

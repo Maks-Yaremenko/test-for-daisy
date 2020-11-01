@@ -1,7 +1,7 @@
 @import 'src/app/constants/colors';
 
 .page-rule-form {
-  &_rules div {
+  &_row-wrapper {
     &:not(:first-child) {
       margin-top: 32px;
       &:after {
