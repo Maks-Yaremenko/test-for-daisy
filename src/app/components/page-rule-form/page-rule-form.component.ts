@@ -1,4 +1,4 @@
-import { Component, ChangeDetectionStrategy } from '@angular/core';
+import { Component, ChangeDetectionStrategy, OnInit } from '@angular/core';
 import { FormArray, FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
@@ -7,7 +7,7 @@ import { FormArray, FormBuilder, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./page-rule-form.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class PageRuleFormComponent {
+export class PageRuleFormComponent implements OnInit {
   public conditions = ['Contains', 'Exact match'];
   public pages: string[] = [
     'All Pages',
@@ -16,18 +16,13 @@ export class PageRuleFormComponent {
     'Password Page',
     'Custom',
   ];
-  public form: FormGroup;
+  public form: FormGroup = this.fb.group({ rules: this.fb.array([]) });
 
-  constructor(private fb: FormBuilder) {
-    this.form = this.fb.group({
-      rules: this.fb.array([
-        this.fb.group({
-          page: this.fb.control(this.pages[0]),
-          condition: this.fb.control(this.conditions[0]),
-          url: this.fb.control('', Validators.required),
-        }),
-      ]),
-    });
+  constructor(private fb: FormBuilder) {}
+
+  ngOnInit() {
+    // Initial rule (based on design)
+    this.addRule();
   }
 
   get rules(): FormArray {

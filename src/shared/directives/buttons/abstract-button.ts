@@ -4,7 +4,7 @@ import { Subject } from 'rxjs';
 import {
   ButtonStyle,
   ButtonStyleConfig,
-  ButtonTypes,
+  ButtonColors,
 } from '@shared/directives/buttons/button.types';
 
 // I know that styling of a button could be done much much easier, I just wanted to play
@@ -16,7 +16,7 @@ export class AbstractButton {
   private readonly config: ButtonStyleConfig;
   private readonly element: ElementRef;
 
-  @Input() set color(color: ButtonTypes) {
+  @Input() set color(color: ButtonColors) {
     if (this.config[color]) {
       this.setStyle(this.element, this.config[color]);
     }
@@ -53,7 +53,7 @@ export class AbstractButton {
   constructor(element: ElementRef, config: ButtonStyleConfig) {
     this.element = element;
     this.config = config;
-    this.setStyle(element, this.config[ButtonTypes.basic]);
+    this.setStyle(element, this.config[ButtonColors.basic]);
   }
 
   private setBackground(background: string): void {

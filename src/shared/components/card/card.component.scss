@@ -1,3 +1,7 @@
+@import 'src/app/constants/colors';
+
+$underline: $grey-200;
+
 :host {
   display: block;
   width: 100%;
@@ -5,8 +9,8 @@
 
 .card {
   border-radius: 4px;
-  background: #fff;
-  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.08), 0 0 6px rgba(0, 0, 0, 0.05);
+  background: $white;
+  box-shadow: 0 6px 10px $grey-200, 0 0 6px $grey-100;
 
   &_header {
     padding: 18px;
@@ -24,7 +28,7 @@
     }
 
     &__underline {
-      border-bottom: 1px solid lightgray;
+      border-bottom: 1px solid $underline;
     }
   }
 
@@ -38,7 +42,7 @@
       display: none;
     }
     &__underline {
-      border-top: 1px solid lightgray;
+      border-top: 1px solid $underline;
     }
   }
 }

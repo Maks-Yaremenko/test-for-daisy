@@ -1,11 +1,11 @@
 import { Colors } from '@constants/colors';
 import {
   ButtonStyleConfig,
-  ButtonTypes,
+  ButtonColors,
 } from '@shared/directives/buttons/button.types';
 
 export const StrockedButtonStyleConfig: ButtonStyleConfig = {
-  [ButtonTypes.basic]: {
+  [ButtonColors.basic]: {
     main: {
       backgroundColor: Colors.$grey50,
       borderRadius: '4px',
@@ -24,7 +24,7 @@ export const StrockedButtonStyleConfig: ButtonStyleConfig = {
       backgroundColor: Colors.$grey300,
     },
   },
-  [ButtonTypes.warn]: {
+  [ButtonColors.warn]: {
     main: {
       color: Colors.$grey50,
       backgroundColor: Colors.$red400,

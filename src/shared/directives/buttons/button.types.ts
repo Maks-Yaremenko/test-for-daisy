@@ -1,27 +1,25 @@
-export enum ButtonTypes {
+export enum ButtonColors {
   basic = 'basic',
   warn = 'warn',
 }
 
+export interface ButtonStyleState {
+  color?: string;
+  backgroundColor?: string;
+  border?: string;
+  borderRadius?: string;
+  cursor?: string;
+  fontSize?: string;
+  padding?: string;
+  textDecoration?: string;
+  outline?: string;
+  height?: string;
+}
+
 export interface ButtonStyle {
-  main: {
-    color: string;
-    backgroundColor: string;
-    border: string;
-    borderRadius?: string;
-    cursor?: string;
-    fontSize?: string;
-    padding?: string;
-    textDecoration?: string;
-    outline?: string;
-    height?: string;
-  };
-  hover: {
-    backgroundColor: string;
-  };
-  active: {
-    backgroundColor: string;
-  };
+  main: ButtonStyleState;
+  hover: ButtonStyleState;
+  active: ButtonStyleState;
 }
 
 export interface ButtonStyleConfig {

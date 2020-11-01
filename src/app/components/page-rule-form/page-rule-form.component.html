@@ -48,7 +48,7 @@
             <button
               class="page-rule-form_action-delete icon-cancel"
               appIconButton
-              (clicked)="removeRule(i)"
+              (click)="removeRule(i)"
             ></button>
           </div>
         </ng-container>
@@ -59,7 +59,7 @@
       type="button"
       class="page-rule-form_action-add-rule"
       appStrokedButton
-      (clicked)="addRule()"
+      (click)="addRule()"
     >
       {{ '+ new rule' | uppercase }}
     </button>
