@@ -8,10 +8,11 @@ import { SharedModule } from '@shared/shared.module';
 import { AppComponent } from './app.component';
 import { PageRuleFormComponent } from './components/page-rule-form/page-rule-form.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [AppComponent, PageRuleFormComponent],
-  imports: [BrowserModule, SharedModule, FormsModule, ReactiveFormsModule],
+  imports: [BrowserModule, SharedModule, FormsModule, ReactiveFormsModule, BrowserAnimationsModule],
   providers: [],
   bootstrap: [AppComponent],
 })

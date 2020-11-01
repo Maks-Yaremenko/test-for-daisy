@@ -1,59 +1,59 @@
 <div class="page-rule-form flex flex-column">
   <form [formGroup]="form">
-    <div formArrayName="rules">
-      <ng-container *ngFor="let rule of rules.controls; let i = index">
+    <div formArrayName="rules" class="page-rule-form_rules">
+      <div
+        [@slideInOut]="'in'"
+        *ngFor="let rule of rules.controls; let i = index"
+      >
+        <!--
         <span *ngIf="i >= 1" class="page-rule-form_separator">OR</span>
-        <ng-container [formGroup]="rule">
-          <div class="page-rule-form_row">
+-->
+        <div class="page-rule-form_row" [formGroup]="rule">
+          <app-input-select formControlName="page" class="page-rule-form_page">
+            <option *ngFor="let page of pages">
+              {{ page }}
+            </option>
+          </app-input-select>
+
+          <ng-container
+            *ngIf="rules.controls[i]['controls'].page.value === 'Custom'"
+          >
             <app-input-select
-              formControlName="page"
-              class="page-rule-form_page"
+              formControlName="condition"
+              class="page-rule-form_condition"
             >
-              <option *ngFor="let page of pages">
-                {{ page }}
+              <option *ngFor="let condition of conditions">
+                {{ condition }}
               </option>
             </app-input-select>
 
-            <ng-container
-              *ngIf="rules.controls[i]['controls'].page.value === 'Custom'"
-            >
-              <app-input-select
-                formControlName="condition"
-                class="page-rule-form_condition"
+            <div class="page-rule-form_url">
+              <app-input-text
+                #url
+                formControlName="url"
+                placeholder="Type a full or partial URL"
               >
-                <option *ngFor="let condition of conditions">
-                  {{ condition }}
-                </option>
-              </app-input-select>
+              </app-input-text>
+              <span
+                class="field-error"
+                *ngIf="
+                  rules.controls[i]['controls'].url.touched &&
+                  rules.controls[i]['controls'].url.invalid &&
+                  !url.focused
+                "
+                >URL is Missing</span
+              >
+            </div>
+          </ng-container>
 
-              <div class="page-rule-form_url">
-                <app-input-text
-                  #url
-                  formControlName="url"
-                  placeholder="Type a full or partial URL"
-                >
-                </app-input-text>
-                <span
-                  class="field-error"
-                  *ngIf="
-                    rules.controls[i]['controls'].url.touched &&
-                    rules.controls[i]['controls'].url.invalid &&
-                    !url.focused
-                  "
-                  >URL is Missing</span
-                >
-              </div>
-            </ng-container>
-
-            <button
-              color="warn"
-              class="page-rule-form_action-delete app-round-icon"
-              appIconButton
-              (click)="removeRule(i)"
-            ></button>
-          </div>
-        </ng-container>
-      </ng-container>
+          <button
+            color="warn"
+            class="page-rule-form_action-delete app-round-icon"
+            appIconButton
+            (click)="removeRule(i)"
+          ></button>
+        </div>
+      </div>
     </div>
 
     <button

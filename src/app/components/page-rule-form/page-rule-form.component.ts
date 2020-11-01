@@ -1,7 +1,9 @@
 import { Component, ChangeDetectionStrategy, OnInit } from '@angular/core';
 import { FormArray, FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { slideInOut } from '@shared/animations/slideInOut';
 
 @Component({
+  animations: [slideInOut],
   selector: 'app-page-rule-form',
   templateUrl: './page-rule-form.component.html',
   styleUrls: ['./page-rule-form.component.scss'],

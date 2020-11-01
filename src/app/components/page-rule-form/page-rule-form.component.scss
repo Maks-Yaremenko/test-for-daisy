@@ -1,8 +1,24 @@
 @import 'src/app/constants/colors';
 
 .page-rule-form {
+  &_rules div {
+    &:not(:first-child) {
+      margin-top: 32px;
+      &:after {
+        position: absolute;
+        top: -32px;
+        display: inline-block;
+        margin: 8px 32px;
+        font-size: 14px;
+        color: $grey-400;
+        content: 'OR';
+      }
+    }
+  }
+
   &_row {
     display: flex;
+    position: relative;
   }
 
   &_separator {
