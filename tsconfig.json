@@ -15,7 +15,8 @@
     "lib": ["es2018", "dom"],
     "paths": {
       "@constants/*": ["./src/app/constants/*"],
-      "@shared/*": ["./src/shared/*"]
+      "@shared/*": ["./src/shared/*"],
+      "@styles/*": ["./src/assets/styles/*"]
     }
   },
   "angularCompilerOptions": {

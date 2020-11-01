@@ -4,10 +4,10 @@ import {
   Component,
   ViewChild,
 } from '@angular/core';
+import { merge, Observable } from 'rxjs';
+import { map, scan, startWith } from 'rxjs/operators';
 
 import { AppCard } from '@shared/components/card/card.component';
-import { map, scan, startWith } from 'rxjs/operators';
-import { merge, Observable } from 'rxjs';
 import { PageRuleFormComponent } from './components/page-rule-form/page-rule-form.component';
 
 @Component({

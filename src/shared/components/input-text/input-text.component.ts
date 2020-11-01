@@ -3,10 +3,8 @@ import {
   ChangeDetectionStrategy,
   forwardRef,
   Input,
-  Output,
 } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
-import { Subject } from 'rxjs';
 
 @Component({
   selector: 'app-input-text',
